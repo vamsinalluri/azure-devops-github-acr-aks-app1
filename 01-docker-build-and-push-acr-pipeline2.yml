@@ -22,7 +22,10 @@ variables:
 stages:
 - stage: Build
   displayName: Build and push stage
-  jobs:  
+  jobs:
+  - job: BBNO
+    steps:
+      - script: echo $(Build.BuildId)  
   - job: Build
     displayName: Build
     pool:
